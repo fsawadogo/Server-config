@@ -1,5 +1,5 @@
 
-# ** Étape 1 : Télécharger et Installer OpenVPN**
+# **Étape 1 : Télécharger et Installer OpenVPN**
 ### **1 Télécharger OpenVPN**
 1. **Allez sur le site officiel d’OpenVPN** :  
    - [https://openvpn.net/community-downloads/](https://openvpn.net/community-downloads/)
@@ -16,7 +16,7 @@
 
 ---
 
-# ** Étape 2 : Générer les Certificats et Clés**
+# **Étape 2 : Générer les Certificats et Clés**
 ### **1 Initialiser EasyRSA**
 1. **Ouvrir une invite de commandes en mode administrateur**.
 2. **Se rendre dans le dossier EasyRSA** :
@@ -29,7 +29,7 @@
    ./easyrsa init-pki
    ```
 
-### ** Générer un certificat pour le serveur**
+### **Générer un certificat pour le serveur**
 1. **Créer une autorité de certification (CA)** :
    ```sh
    ./easyrsa build-ca
@@ -60,7 +60,7 @@
 
 ---
 
-# **🔹 Étape 3 : Configurer OpenVPN sur le Serveur**
+# **Étape 3 : Configurer OpenVPN sur le Serveur**
 1. **Se rendre dans le dossier de configuration OpenVPN** :
    ```sh
    cd "C:\Program Files\OpenVPN\config"
@@ -94,7 +94,7 @@
 
 ---
 
-# ** Étape 4 : Ouvrir les Ports dans le Pare-Feu**
+# **Étape 4 : Ouvrir les Ports dans le Pare-Feu**
 ### **1️ Ajouter une règle pour OpenVPN**
 1. **Ouvrir PowerShell en mode administrateur** et exécuter :
    ```sh
@@ -108,7 +108,7 @@
 
 ---
 
-# **🔹 Étape 5 : Configurer le Client OpenVPN**
+# **Étape 5 : Configurer le Client OpenVPN**
 ### **1️ Transférer les fichiers nécessaires au client**
 Copiez les fichiers suivants du serveur vers le client (PC distant) :
 - `C:\Program Files\OpenVPN\easy-rsa\pki\ca.crt`
@@ -142,15 +142,9 @@ Copiez les fichiers suivants du serveur vers le client (PC distant) :
 
 ---
 
-# **🔹 Étape 6 : Sécuriser le VPN**
+# **Étape 6 : Sécuriser le VPN**
 ### **1️ Activer l’authentification MFA**
 - Ajoutez un module d’authentification à deux facteurs (ex: **Google Authenticator**).
 
 ### **2️ Bloquer l’accès si une connexion échoue plusieurs fois**
 - Utilisez `fail2ban` pour bloquer les IP suspectes.
-
----
-
-# **Conclusion**
-Votre **serveur VPN OpenVPN sous Windows Server 2022 est maintenant opérationnel**!  
-Vous pouvez vous **connecter en toute sécurité à votre réseau** depuis l’extérieur.
